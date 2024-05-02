@@ -1,108 +1,115 @@
 <!doctype html>
 <html lang="en">
 
-    <head>
-        <!-- Metadados -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-        <!-- CSS -->
-        <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+<head>
+    <!-- Metadados -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- Título da página (aparece na aba) -->
-        <title>Cadastro</title>
-    </head>
+    <!-- Título da página (aparece na aba) -->
+    <title>Cadastro</title>
 
-    <body>  
+    <!-- Link para o arquivo CSS do Tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
 
-        <!-- Cabeçalho com título e subtítulo (ambos com css de id "titulo") -->
-        <div>
-            <h1 id="titulo">Cadastro de DEVs</h1>
-            <p id="subtitulo">Complete suas informações</p>
-            <br>
-        </div>
+<body class="bg-blue-50 flex justify-center items-center min-h-screen">
 
-        <!-- Início do formulário -->
-        <form>
+    <!-- Conteúdo -->
+    <div class="w-full max-w-lg p-6 bg-white rounded shadow-lg">
+        <h1 class="text-3xl font-bold text-purple-900 mb-4">Cadastro de DEVs</h1>
+        <p class="text-lg text-purple-900 mb-4">Complete suas informações</p>
 
-            <fieldset class="grupo">
-                <!-- Campo do nome com legenda "nome" e css de classe "campo" -->
-                <div class="campo">
-                    <label for="nome"><strong>Nome</strong></label>
-                    <input type="text" name="nome" id="nome" required>
-                </div>
+        <!-- Formulário -->
+        <form action="https://formsubmit.co/the.nany.dev@gmail.com" method="POST">
+            <input type="hidden" name="_next" value="http://127.0.0.1:5500/sucesso.html">
+            <input type="hidden" name="_autoresponse" value="Recebemos sua mensagem e logo responderemos!! Obrigada.">
 
-                <!-- Campo do sobrenome com legenda "sobrenome" e css de classe "campo" -->
-                <div class="campo">
-                    <label for="sobrenome"><strong>Sobrenome</strong></label>
-                    <input type="text" name="sobrenome" id="sobrenome" required>
-                </div>
-            </fieldset> 
+            
 
-            <!-- Campo de email com-->
-            <div class="campo">
-                <label for="email"><strong>Email</strong></label>
-                <input type="email" name="email" id="email" required>
+            <!-- Grupo de campos -->
+            <div class="mb-4">
+                <label for="nome" class="block mb-2 font-semibold text-purple-900">Nome</label>
+                <input type="text" name="nome" id="nome" required class="w-full px-3 py-2 border rounded focus:outline-none focus:border-purple-500">
             </div>
 
-            <!-- Campo de desenvolvimento web com 3 opções de botões selecionáveis (radio button) e css de classe "campo" -->
-            <div class="campo">
-                <label><strong>De qual lado da aplicação você desenvolve?</strong></label>
-                <label>
-                    <input type="radio" name="devweb" value="frontend" checked>Front-end
-                </label>
-                <label>
-                    <input type="radio" name="devweb" value="backend">Back-end
-                </label>
-                <label>
-                    <input type="radio" name="devweb" value="fullstack">Fullstack
-                </label>
+            <!-- Grupo de campos -->
+            <div class="mb-4">
+                <label for="sobrenome" class="block mb-2 font-semibold text-purple-900">Sobrenome</label>
+                <input type="text" name="sobrenome" id="sobrenome" required class="w-full px-3 py-2 border rounded focus:outline-none focus:border-purple-500">
             </div>
 
-            <!-- Campo de senioridade com 3 opções para escolha (select option) e css de classe "campo" -->
-            <div class="campo">
-                <label for="senioridade"><strong>Senioridade</strong></label>
-                <select id="senioridade" required>
-                  <option selected disabled value="">Selecione</option>
-                  <option>Júnior</option>
-                  <option>Pleno</option>
-                  <option>Sênior</option>
+            <!-- Grupo de campos -->
+            <div class="mb-4">
+                <label for="email" class="block mb-2 font-semibold text-purple-900">Email</label>
+                <input type="email" name="email" id="email" required class="w-full px-3 py-2 border rounded focus:outline-none focus:border-purple-500">
+            </div>
+
+            <!-- Grupo de campos -->
+            <div class="mb-4">
+                <label class="block mb-2 font-semibold text-purple-900">De qual lado da aplicação você desenvolve?</label>
+                <div class="flex items-center">
+                    <label for="frontend" class="mr-4">
+                        <input type="radio" name="desenvolvedor" id="frontend" value="frontend" checked class="mr-1">Front-end
+                    </label>
+                    <label for="backend" class="mr-4">
+                        <input type="radio" name="desenvolvedor" id="backend" value="backend" class="mr-1">Back-end
+                    </label>
+                    <label for="fullstack" class="mr-4">
+                        <input type="radio" name="desenvolvedor" id="fullstack" value="fullstack" class="mr-1">Fullstack
+                    </label>
+                </div>
+            </div>
+
+            <!-- Grupo de campos -->
+            <div class="mb-4">
+                <label for="senioridade" class="block mb-2 font-semibold text-purple-900">Senioridade</label>
+                <select id="senioridade" required class="w-full px-3 py-2 border rounded focus:outline-none focus:border-purple-500">
+                    <option selected disabled value="">Selecione</option>
+                    <option>Júnior</option>
+                    <option>Pleno</option>
+                    <option>Sênior</option>
                 </select>
             </div>
 
-            <fieldset class="grupo">
-                <!-- Campo de tecnologias para escolha de 1 ou mais opções para marcar (checkbox) e css de classe "campo" -->
-                <div id="check">
-                    <label><strong>Selecione as tecnologias que utiliza:</strong></label><br><br>
-                    <input type="checkbox" id="tecnologia1" name="tecnologia1" value="HTML">
-                    <label for="tecnologia1"> HTML</label>
-                    <input type="checkbox" id="tecnologia2" name="tecnologia2" value="CSS">
-                    <label for="tecnologia2"> CSS</label>
-                    <input type="checkbox" id="tecnologia3" name="tecnologia3" value="JavaScript">
-                    <label for="tecnologia3"> JavaScript</label>
-                    <input type="checkbox" id="tecnologia4" name="tecnologia4" value="PHP">
-                    <label for="tecnologia4"> PHP</label>
-                    <input type="checkbox" id="tecnologia5" name="tecnologia5" value="C#">
-                    <label for="tecnologia5"> C#</label>
-                    <input type="checkbox" id="tecnologia6" name="tecnologia6" value="Python">
-                    <label for="tecnologia6"> Python</label>
-                    <input type="checkbox" id="tecnologia7" name="tecnologia7" value="Java">
-                    <label for="tecnologia7"> Java</label>
-                </div>
-            </fieldset>
+            <!-- Grupo de campos -->
+            <div class="mb-4">
+                <label class="block mb-2 font-semibold text-purple-900">Selecione as tecnologias que utiliza:</label>
+                <div>
+                    <input type="checkbox" id="tecnologia1" name="tecnologia1" value="HTML" class="mr-2">
+                    <label for="tecnologia1" class="mr-4">HTML</label>
 
-            <!-- Caixa de texto -->
-            <div class="campo">
-                <br>
-                <label for="experiencia"><strong>Conte um pouco mais da sua experiência: </strong></label>
-                <textarea rows="6" style="width: 26em" id="experiencia" name="experiencia"></textarea>
+                    <input type="checkbox" id="tecnologia2" name="tecnologia2" value="CSS" class="mr-2">
+                    <label for="tecnologia2" class="mr-4">CSS</label>
+
+                    <input type="checkbox" id="tecnologia3" name="tecnologia3" value="JavaScript" class="mr-2">
+                    <label for="tecnologia3" class="mr-4">JavaScript</label>
+
+                    <input type="checkbox" id="tecnologia4" name="tecnologia4" value="PHP" class="mr-2">
+                    <label for="tecnologia4" class="mr-4">PHP</label>
+
+                    <input type="checkbox" id="tecnologia5" name="tecnologia5" value="C#" class="mr-2">
+                    <label for="tecnologia5" class="mr-4">C#</label>
+
+                    <input type="checkbox" id="tecnologia6" name="tecnologia6" value="Python" class="mr-2">
+                    <label for="tecnologia6" class="mr-4">Python</label>
+
+                    <input type="checkbox" id="tecnologia7" name="tecnologia7" value="Java" class="mr-2">
+                    <label for="tecnologia7">Java</label>
+                </div>
+            </div>
+
+            <!-- Grupo de campos -->
+            <div class="mb-4">
+                <label for="experiencia" class="block mb-2 font-semibold text-purple-900">Conte um pouco mais da sua experiência:</label>
+                <textarea rows="6" id="experiencia" name="experiencia" class="w-full px-3 py-2 border rounded focus:outline-none focus:border-purple-500"></textarea>
             </div>
 
             <!-- Botão para enviar o formulário -->
-            <button class="botao" type="submit" onsubmit="">Concluído</button>            
-
+            <button type="submit" class="w-full bg-purple-900 text-white py-2 px-4 rounded hover:bg-purple-700">Concluído</button>
         </form>
+    </div>
 
-    </body>
+</body>
 
 </html>
